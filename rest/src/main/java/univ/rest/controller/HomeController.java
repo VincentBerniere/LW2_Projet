@@ -11,9 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
-		String s = "<table>";
-		
+	public String welcome(ModelMap model) {
+		String s = "<h1>Projet créé par : Vincent Bernière</h1>";
+
+		s += "<p><strong>Nombre de STB stockées : "+""+"</strong></p>";
+
+		s += "<table>";
 		s += "<thead>"
 				+ "<tr>"
 					+ "<td>URL</td>"
@@ -24,20 +27,20 @@ public class HomeController {
 		
 		s += "<tbody>";
 		s += "<tr>"
-				+ "<td>/STB1/resume</td>"
+				+ "<td>/resume</td>"
 				+ "<td>GET</td>"
-				+ "<td>renvoie un flux XML contenant la liste des STB</td>"
+				+ "<td>Affiche sous forme résumée, la liste des STB enregistrées.</td>"
 			+ "</tr>";
 		s += "<tr>"
-				+ "<td>/STB1/resume/id</td>"
+				+ "<td>/resume/n</td>"
 				+ "<td>GET</td>"
-				+ "<td>renvoie un flux XML décrivant le détail de la STB d’identifiant Id</td>"
+				+ "<td>Affiche le contenu complet de la STB dont l'identifiant est \"n\".</td>"
 			+ "</tr>";
 		s += "<tr>"
-				+ "<td>/STB1/insert</td>"
+				+ "<td>/depot</td>"
 				+ "<td>POST</td>"
-				+ "<td>reçoit un flux XML décrivant une STB, crée l'objet correspondant "
-				+ "et retourne son nouvel identifiant au format XML</td>"
+				+ "<td>Dépose une nouvelle STB. Une vérification syntaxique du contenu est effectuée, afin\n" +
+				"de n'autoriser que des dépôts corrects (validation XSD par le service).</td>"
 			+ "</tr>";
 		s += "</tbody>";
 		s += "</table>";

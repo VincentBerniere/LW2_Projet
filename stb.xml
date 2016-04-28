@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:STB xmlns:p="http://univ.fr/stb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/stb stb.xsd ">
+  <p:TitreDuProjet>AmicaleGIL</p:TitreDuProjet>
+  <p:Version>0.1</p:Version>
+  <p:Date>2001-01-01</p:Date>
+  <p:Description>p:Description</p:Description>
+  <p:Client>
+    <p:entité>p:entité</p:entité>
+    <p:contact>p:contact</p:contact>
+    <p:codePostal>0</p:codePostal>
+  </p:Client>
+  <p:Equipe>
+    <p:gender>false</p:gender>
+    <p:nom>p:nom</p:nom>
+    <p:prenom>p:prenom</p:prenom>
+  </p:Equipe>
+  <p:Equipe>
+    <p:gender>false</p:gender>
+    <p:nom>p:nom</p:nom>
+    <p:prenom>p:prenom</p:prenom>
+  </p:Equipe>
+  <p:Fonctionnalite Priorite="0">
+    <p:Description>p:Description</p:Description>
+    <p:ExigenceFonctionnelle>
+      <p:Identifiant>idvalue0</p:Identifiant>
+      <p:Description>p:Description</p:Description>
+      <p:Priorite>0</p:Priorite>
+    </p:ExigenceFonctionnelle>
+    <p:ExigenceFonctionnelle>
+      <p:Identifiant>idvalue1</p:Identifiant>
+      <p:Description>p:Description</p:Description>
+      <p:Priorite>0</p:Priorite>
+    </p:ExigenceFonctionnelle>
+  </p:Fonctionnalite>
+</p:STB>

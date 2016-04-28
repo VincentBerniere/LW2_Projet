@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://univ.fr/stb" xmlns="http://univ.fr/stb">
+	
+	<xs:element name="STB" type="STBType"></xs:element>
+	<xs:element name="Client" type="ClientType"></xs:element>
+	<xs:element name="Equipe" type="EquipeType"></xs:element>
+	<xs:element name="Fonctionnalite" type="FonctionnaliteType"></xs:element>
+	<xs:element name="ExigenceFonctionnelle" type="ExigenceFonctionnelleType"></xs:element>
+	
+	<xs:element name="TitreDuProjet" type="xs:string"></xs:element>
+	<xs:element name="Version" type="xs:float" default="0.1"></xs:element>
+	<xs:element name="Date" type="xs:date"></xs:element>
+	<xs:element name="Description" type="xs:string"></xs:element>
+	
+	<xs:element name="entité" type="xs:string"></xs:element>
+   	<xs:element name="contact" type="xs:string"></xs:element>
+   	<xs:element name="codePostal" type="xs:int"></xs:element>
+   	
+   	<xs:element name="nom" type="xs:string"></xs:element>
+   	<xs:element name="prenom" type="xs:string"></xs:element>
+   	
+   	<xs:element name="Priorite" type="xs:int"></xs:element>
+   	<xs:element name="Identifiant" type="xs:ID"></xs:element>
+   	
+   	<xs:element name="Commentaire" type="xs:string"></xs:element>
+   
+   	<xs:element name="gender" type="xs:boolean" default="false" />
+   
+   	<xs:complexType name="STBType">
+   		<xs:sequence>
+   			<xs:element ref="TitreDuProjet"></xs:element>
+   			<xs:element ref="Version"></xs:element>
+   			<xs:element ref="Date"></xs:element>
+   			<xs:element ref="Description"></xs:element>
+   			<xs:element ref="Client" minOccurs="1" maxOccurs="1"></xs:element>
+			<xs:element ref="Equipe" minOccurs="2" maxOccurs="7"></xs:element>
+			<xs:element ref="Fonctionnalite" minOccurs="1" maxOccurs="unbounded"></xs:element>
+   			<xs:element ref="Commentaire" minOccurs="0" maxOccurs="1"></xs:element>
+   		</xs:sequence>
+    </xs:complexType>
+    
+	<xs:complexType name="ClientType">
+   		<xs:sequence>
+   			<xs:element ref="entité"></xs:element>
+   			<xs:element ref="contact"></xs:element>
+   			<xs:element ref="codePostal"></xs:element>
+   		</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="EquipeType">
+   		<xs:sequence>
+   			<xs:element ref="gender"></xs:element>
+   			<xs:element ref="nom"></xs:element>
+   			<xs:element ref="prenom"></xs:element>
+   		</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="FonctionnaliteType">
+   		<xs:sequence>
+   			<xs:element ref="Description"></xs:element>
+   			<xs:element ref="ExigenceFonctionnelle" minOccurs="2" maxOccurs="unbounded"></xs:element>
+   		</xs:sequence>
+   		<xs:attribute name="Priorite" type="prioriteType" use="required"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="ExigenceFonctionnelleType">
+		<xs:sequence>
+			<xs:element ref="Identifiant"></xs:element>
+			<xs:element ref="Description"></xs:element>
+			<xs:element ref="Priorite"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="prioriteType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="2"></xs:minInclusive>
+			<xs:maxInclusive value="unbounded"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+    
+</xs:schema>

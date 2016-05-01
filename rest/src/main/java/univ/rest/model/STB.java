@@ -7,13 +7,14 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement (name = "STB")
 @XmlAccessorType(XmlAccessType.NONE)
 public class STB {
+	@XmlElement
 	private int id;
 	@XmlElement
 	private String titreDuProjet;
 	@XmlElement
 	private double version;
 	@XmlElement
-	private Date date;
+	private String date;
 	@XmlElement
 	private String description;
 	@XmlElement
@@ -23,7 +24,7 @@ public class STB {
 	@XmlElement
 	private ArrayList<Fonctionnalite> fonctionnalite;
 
-	public STB(int id, String titre, double version, Date date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite) {
+	public STB(int id, String titre, double version, String date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite) {
 		super();
 		this.id = id;
 		this.titreDuProjet = titre;
@@ -61,11 +62,11 @@ public class STB {
 		this.version = version;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

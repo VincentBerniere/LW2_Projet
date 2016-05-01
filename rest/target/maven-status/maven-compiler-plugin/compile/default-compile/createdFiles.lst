@@ -1,11 +1,13 @@
-univ\rest\model\STB.class
 univ\rest\config\AppConfig.class
 univ\rest\model\Fonctionnalite.class
 univ\rest\controller\STBController.class
 univ\rest\model\Client.class
+univ\rest\model\STB.class
+univ\rest\model\STBLite.class
 univ\rest\model\STBList.class
 univ\rest\controller\HomeController.class
 univ\rest\model\Equipe.class
 univ\rest\ServletInitializer.class
 univ\rest\model\ExigenceFonctionnelle.class
 univ\rest\config\MongoDBJDBC.class
+univ\rest\model\STBLiteList.class

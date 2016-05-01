@@ -20,15 +20,15 @@ import univ.rest.model.*;
 public class STBController {
 	
 	@RequestMapping(value = "/resume")
-    public ResponseEntity<STBList> getAllSTBs() 
+    public ResponseEntity<STBLiteList> getAllSTBs()
     {
-        STBList stbs = new MongoDBJDBC().getMongoSTBList();
+        STBLiteList stbs = new MongoDBJDBC().getMongoSTBList();
 
         if (stbs.getSTBs().size()>0) {
-            return new ResponseEntity<STBList>(stbs, HttpStatus.OK);
+            return new ResponseEntity<STBLiteList>(stbs, HttpStatus.OK);
         }
 
-        return new ResponseEntity<STBList>(stbs, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<STBLiteList>(stbs, HttpStatus.BAD_REQUEST);
     }
      
     @RequestMapping(value = "/resume/{id}")
@@ -39,27 +39,21 @@ public class STBController {
         if (stb != null) {
             return new ResponseEntity<STB>(stb, HttpStatus.OK);
         }
-        
+
+        stb.setClient(null);
+        stb.setEquipe(null);
+        stb.setFonctionnalite(null);
         return new ResponseEntity(stb, HttpStatus.NOT_FOUND);
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/depot", headers="Accept=application/xml")
     public String insertSTB(@RequestBody STB stb) {
-        STBList stbs = new MongoDBJDBC().getMongoSTBList();
 
-        if (stbs.getSTBs().size() == 0) {
-            stb.setId(1);
-        }
-        else {
-            stb.setId(new MongoDBJDBC().getMongoSTBList().getSTBs().size()+1);
-        }
-
-
-        if(new MongoDBJDBC().insertMongoSTB(stb) == "") {
+        if(new MongoDBJDBC().insertMongoSTB(stb)) {
             return "<h1>STB déposée !</h1>" +
-                    "<p>Numéro d'identification : "+stb.getId()+"</p>";
+                    "<p>Numéro d'identification : "+new MongoDBJDBC().getMongoSTBListSize()+"</p>";
         } else {
-            return "<h1>Erreur lors de l'insertion !</h1><p>"+new MongoDBJDBC().insertMongoSTB(stb)+"</p>";
+            return "<h1>Erreur lors de l'insertion !</h1>";
         }
     }
 }

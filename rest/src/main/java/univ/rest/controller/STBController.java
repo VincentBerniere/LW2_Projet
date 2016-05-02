@@ -53,32 +53,34 @@ public class STBController {
     @RequestMapping(method = RequestMethod.POST, value = "/depot", headers = "Accept=application/xml")
     public ResponseEntity insertSTB(@RequestBody STB stb) {
 
-        if (new MongoDBJDBC().insertMongoSTB(stb)) {
-            boolean validate = true;
+        boolean validate = true;
 
-            try {
-                JAXBContext jaxbContext = JAXBContext.newInstance(STB.class);
-                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(STB.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
-                // output pretty printed
-                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-                StringWriter xmlStr = new StringWriter();
-                jaxbMarshaller.marshal(stb, xmlStr);
+            // output pretty printed
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            StringWriter xmlStr = new StringWriter();
+            jaxbMarshaller.marshal(stb, xmlStr);
 
-                validate = new ValidateXML().should_validate_with_DOM(xmlStr);
+            validate = new ValidateXML().should_validate_with_DOM(xmlStr);
 
-            } catch (JAXBException e) {
-                return new ResponseEntity("Erreur lors de la validation !", HttpStatus.BAD_REQUEST);
-            }
+        } catch (JAXBException e) {
+            System.out.println(e);
+            return new ResponseEntity("Erreur lors de la validation !", HttpStatus.BAD_REQUEST);
+        }
 
+        if (validate) {
 
-            if (validate) {
+            if (new MongoDBJDBC().insertMongoSTB(stb)) {
                 return new ResponseEntity("STB d'id " + stb.getId() + " déposée.", HttpStatus.OK);
             } else {
-                return new ResponseEntity("Votre source ne passe pas la validation XSD.", HttpStatus.NOT_ACCEPTABLE);
+                return new ResponseEntity("Erreur lors de l'insertion !", HttpStatus.BAD_REQUEST);
             }
+
         } else {
-            return new ResponseEntity("Erreur lors de l'insertion !", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("Votre source ne passe pas la validation XSD.", HttpStatus.NOT_ACCEPTABLE);
         }
     }
 }

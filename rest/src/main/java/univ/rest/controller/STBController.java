@@ -40,7 +40,7 @@ public class STBController {
     }
 
     @RequestMapping(value = "/resume/{id}")
-    public ResponseEntity<STB> getSTBById(@PathVariable("id") int id) {
+    public ResponseEntity<STB> getSTBById(@PathVariable("id") String id) {
         STB stb = new MongoDBJDBC().getMongoSTBList(id);
 
         if (stb != null) {
@@ -54,7 +54,7 @@ public class STBController {
     public ResponseEntity insertSTB(@RequestBody STB stb) {
 
         if (new MongoDBJDBC().insertMongoSTB(stb)) {
-            boolean hasError = true;
+            boolean validate = true;
 
             try {
                 JAXBContext jaxbContext = JAXBContext.newInstance(STB.class);
@@ -65,16 +65,14 @@ public class STBController {
                 StringWriter xmlStr = new StringWriter();
                 jaxbMarshaller.marshal(stb, xmlStr);
 
-                /*boolean hasError = new ValidateXML().should_validate_with_DOM(
-                        new StreamSource()
-                ));*/
+                validate = new ValidateXML().should_validate_with_DOM(xmlStr);
 
             } catch (JAXBException e) {
                 return new ResponseEntity("Erreur lors de la validation !", HttpStatus.BAD_REQUEST);
             }
 
 
-            if (!hasError) {
+            if (validate) {
                 return new ResponseEntity("STB d'id " + stb.getId() + " déposée.", HttpStatus.OK);
             } else {
                 return new ResponseEntity("Votre source ne passe pas la validation XSD.", HttpStatus.NOT_ACCEPTABLE);

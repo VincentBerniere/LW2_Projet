@@ -11,3 +11,4 @@ univ\rest\ServletInitializer.class
 univ\rest\model\ExigenceFonctionnelle.class
 univ\rest\config\MongoDBJDBC.class
 univ\rest\model\STBLiteList.class
+univ\rest\config\ValidateXML.class

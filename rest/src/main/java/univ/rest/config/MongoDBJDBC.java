@@ -61,7 +61,7 @@ public class MongoDBJDBC {
         return stbs;
     }
 
-    public static STB getMongoSTBList(int idS) {
+    public static STB getMongoSTBList(String idS) {
         STB stb = null;
 
         try {
@@ -86,8 +86,9 @@ public class MongoDBJDBC {
             while (cursor.hasNext()) {
                 System.out.println("Inserted Document: " + k);
                 DBObject dbo = cursor.next();
+                ObjectId idSTB = (ObjectId)dbo.get( "_id" );
 
-                if (idS == k) {
+                if (idS.equals(idSTB.toString())) {
                     String titre = (String) dbo.get("titreDuProjet").toString();
                     double version = (double) dbo.get("version");
                     String date = (String) dbo.get("date");
@@ -136,7 +137,6 @@ public class MongoDBJDBC {
 
                         fonctionnalites.add(f);
                     }
-                    ObjectId idSTB = (ObjectId)dbo.get( "_id" );
                     stb = new STB(idSTB.toString(), titre, version, date, descript, client, equipes, fonctionnalites);
 
                     //System.out.println(cursor.next());

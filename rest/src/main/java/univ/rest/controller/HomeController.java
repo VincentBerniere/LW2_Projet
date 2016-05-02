@@ -1,20 +1,19 @@
 package univ.rest.controller;
 
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import univ.rest.config.MongoDBJDBC;
 
 @RestController
 public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
-		String s = "<h1>Projet créé par : Vincent Bernière</h1>";
+		String s = "<h1>Projet créé par : Vincent Bernière et Renan Decamps</h1>";
 
-		s += "<p><strong>Nombre de STB stockées : "+""+"</strong></p>";
+		s += "<p><strong>Nombre de STB stockées : "+new MongoDBJDBC().getMongoSTBListSize()+"</strong></p>";
 
 		s += "<table>";
 		s += "<thead>"

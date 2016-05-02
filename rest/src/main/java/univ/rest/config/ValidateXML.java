@@ -1,62 +1,41 @@
 package univ.rest.config;
 
-import static org.junit.Assert.*;
-
 import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class ValidateXML {
 
-    public static boolean should_validate_with_DOM(InputSource inputSource) {
-        SimpleErrorHandler errorHandler = new SimpleErrorHandler();
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setValidating(false);
-        factory.setNamespaceAware(true);
-
-        SchemaFactory schemaFactory =
-                SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
-
-
+    public static boolean should_validate_with_DOM(StringWriter xmlStr) {
+        SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
+        Schema schema = null;
         try {
-            factory.setSchema(schemaFactory.newSchema(
-                    new Source[] {new StreamSource("src/main/ressources/stb.xsd")}));
+            schema = factory.newSchema(new StreamSource("src/main/ressources/stb.xsd"));
         } catch (SAXException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
+            return false;
         }
-
-
-        DocumentBuilder builder = null;
-        try {
-            builder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        builder.setErrorHandler(errorHandler);
+        Validator validator = schema.newValidator();
+        Source source = new StreamSource(new StringReader(xmlStr.toString()));
 
         try {
-            Document document = builder.parse(inputSource);
+            validator.validate(source);
         } catch (SAXException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
+            return false;
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
+            return false;
         }
 
-        return errorHandler.hasError();
+        return true;
     }
 }

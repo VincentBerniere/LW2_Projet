@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.NONE)
 public class STB {
 	@XmlElement
-	private int id;
+	private String id;
 	@XmlElement
 	private String titreDuProjet;
 	@XmlElement
@@ -24,7 +24,7 @@ public class STB {
 	@XmlElement
 	private ArrayList<Fonctionnalite> fonctionnalite;
 
-	public STB(int id, String titre, double version, String date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite) {
+	public STB(String id, String titre, double version, String date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite) {
 		super();
 		this.id = id;
 		this.titreDuProjet = titre;
@@ -38,11 +38,11 @@ public class STB {
 	public STB(){
         
     }
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 	

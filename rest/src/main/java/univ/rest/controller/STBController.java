@@ -1,5 +1,7 @@
 package univ.rest.controller;
 
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,47 +15,72 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.xml.sax.InputSource;
 import univ.rest.config.MongoDBJDBC;
+import univ.rest.config.ValidateXML;
 import univ.rest.model.*;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.transform.stream.StreamSource;
 
 @RestController
 public class STBController {
-	
-	@RequestMapping(value = "/resume")
-    public ResponseEntity<STBLiteList> getAllSTBs()
-    {
+
+    @RequestMapping(value = "/resume")
+    public ResponseEntity<STBLiteList> getAllSTBs() {
         STBLiteList stbs = new MongoDBJDBC().getMongoSTBList();
 
-        if (stbs.getSTBs().size()>0) {
+        if (stbs.getSTBs().size() > 0) {
             return new ResponseEntity<STBLiteList>(stbs, HttpStatus.OK);
         }
 
         return new ResponseEntity<STBLiteList>(stbs, HttpStatus.BAD_REQUEST);
     }
-     
+
     @RequestMapping(value = "/resume/{id}")
-    public ResponseEntity<STB> getSTBById (@PathVariable("id") int id) 
-    {
+    public ResponseEntity<STB> getSTBById(@PathVariable("id") int id) {
         STB stb = new MongoDBJDBC().getMongoSTBList(id);
 
         if (stb != null) {
             return new ResponseEntity<STB>(stb, HttpStatus.OK);
         }
 
-        stb.setClient(null);
-        stb.setEquipe(null);
-        stb.setFonctionnalite(null);
         return new ResponseEntity(stb, HttpStatus.NOT_FOUND);
     }
-    
-    @RequestMapping(method=RequestMethod.POST, value="/depot", headers="Accept=application/xml")
-    public String insertSTB(@RequestBody STB stb) {
 
-        if(new MongoDBJDBC().insertMongoSTB(stb)) {
-            return "<h1>STB déposée !</h1>" +
-                    "<p>Numéro d'identification : "+new MongoDBJDBC().getMongoSTBListSize()+"</p>";
+    @RequestMapping(method = RequestMethod.POST, value = "/depot", headers = "Accept=application/xml")
+    public ResponseEntity insertSTB(@RequestBody STB stb) {
+
+        if (new MongoDBJDBC().insertMongoSTB(stb)) {
+            boolean hasError = true;
+
+            try {
+                JAXBContext jaxbContext = JAXBContext.newInstance(STB.class);
+                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+                // output pretty printed
+                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                StringWriter xmlStr = new StringWriter();
+                jaxbMarshaller.marshal(stb, xmlStr);
+
+                /*boolean hasError = new ValidateXML().should_validate_with_DOM(
+                        new StreamSource()
+                ));*/
+
+            } catch (JAXBException e) {
+                return new ResponseEntity("Erreur lors de la validation !", HttpStatus.BAD_REQUEST);
+            }
+
+
+            if (!hasError) {
+                return new ResponseEntity("STB d'id " + stb.getId() + " déposée.", HttpStatus.OK);
+            } else {
+                return new ResponseEntity("Votre source ne passe pas la validation XSD.", HttpStatus.NOT_ACCEPTABLE);
+            }
         } else {
-            return "<h1>Erreur lors de l'insertion !</h1>";
+            return new ResponseEntity("Erreur lors de l'insertion !", HttpStatus.BAD_REQUEST);
         }
     }
 }

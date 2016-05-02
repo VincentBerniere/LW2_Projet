@@ -1,6 +1,7 @@
 package univ.rest.config;
 
 import com.mongodb.*;
+import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import univ.rest.model.*;
@@ -39,13 +40,13 @@ public class MongoDBJDBC {
                 DBObject dbo = cursor.next();
                 System.out.println(dbo);
 
-                int idSTB = (int) dbo.get("id");
                 String titre = (String) dbo.get("titreDuProjet").toString();
                 double version = (double) dbo.get("version");
                 String date = (String) dbo.get("date");
                 String descript = (String) dbo.get("description");
 
-                STBLite stb = new STBLite(idSTB, titre, version, date, descript);
+                ObjectId idSTB = (ObjectId)dbo.get( "_id" );
+                STBLite stb = new STBLite(idSTB.toString(), titre, version, date, descript);
                 stbs.getSTBs().add(stb);
 
                 //System.out.println(cursor.next());
@@ -87,7 +88,6 @@ public class MongoDBJDBC {
                 DBObject dbo = cursor.next();
 
                 if (idS == k) {
-                    int idSTB = (int) dbo.get("id");
                     String titre = (String) dbo.get("titreDuProjet").toString();
                     double version = (double) dbo.get("version");
                     String date = (String) dbo.get("date");
@@ -136,7 +136,8 @@ public class MongoDBJDBC {
 
                         fonctionnalites.add(f);
                     }
-                    stb = new STB(idSTB, titre, version, date, descript, client, equipes, fonctionnalites);
+                    ObjectId idSTB = (ObjectId)dbo.get( "_id" );
+                    stb = new STB(idSTB.toString(), titre, version, date, descript, client, equipes, fonctionnalites);
 
                     //System.out.println(cursor.next());
                 }
@@ -200,7 +201,6 @@ public class MongoDBJDBC {
             System.out.println("Collection stb selected successfully");
 
             BasicDBObject doc = new BasicDBObject().
-                    append("id", getMongoSTBListSize()+1).
                     append("titreDuProjet", stb.getTitre()).
                     append("version", stb.getVersion()).
                     append("date", stb.getDate()).
@@ -245,6 +245,8 @@ public class MongoDBJDBC {
             doc.append("fonctionnalite", fcts);
 
             coll.insert(doc);
+            ObjectId idSTB = (ObjectId)doc.get( "_id" );
+            stb.setId(idSTB.toString());
             System.out.println("Document inserted successfully");
         } catch (Exception e) {
             System.out.println(e);

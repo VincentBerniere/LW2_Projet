@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @XmlAccessorType(XmlAccessType.NONE)
 public class STBLite {
     @XmlElement
-    private int id;
+    private String id;
     @XmlElement
     private String titreDuProjet;
     @XmlElement
@@ -23,7 +23,7 @@ public class STBLite {
     @XmlElement
     private String description;
 
-    public STBLite(int id, String titre, double version, String date, String description) {
+    public STBLite(String id, String titre, double version, String date, String description) {
         super();
         this.id = id;
         this.titreDuProjet = titre;
@@ -34,11 +34,11 @@ public class STBLite {
     public STBLite(){
 
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

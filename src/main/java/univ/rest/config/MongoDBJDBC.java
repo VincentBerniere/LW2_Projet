@@ -2,11 +2,8 @@ package univ.rest.config;
 
 import com.mongodb.*;
 import org.bson.types.ObjectId;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import univ.rest.model.*;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -19,6 +16,8 @@ public class MongoDBJDBC {
         try {
             // To connect to mongodb server
             MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
+
+
             // Now connect to your databases
             DB db = mongoClient.getDB("stbs");
             System.out.println("Connect to database successfully");
@@ -26,7 +25,6 @@ public class MongoDBJDBC {
             char[] password = "stbgil".toCharArray();
             boolean auth = db.authenticate("VincentBerniere", password);
             System.out.println("Authentication: " + auth);
-
             DBCollection coll = db.getCollection("stb");
             System.out.println("Collection stb selected successfully");
 
@@ -150,7 +148,8 @@ public class MongoDBJDBC {
 
     public static int getMongoSTBListSize() {
         int k = 1;
-
+        return -1;
+        /*
         try {
 
             // To connect to mongodb server
@@ -180,6 +179,7 @@ public class MongoDBJDBC {
             return -1;
         }
         return k-1;
+        */
     }
 
     public static boolean insertMongoSTB(STB stb) {

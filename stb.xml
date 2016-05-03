@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:STB xmlns:p="http://univ.fr/stb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/stb stb.xsd ">
-  <p:TitreDuProjet>AmicaleGIL</p:TitreDuProjet>
-  <p:Version>0.1</p:Version>
-  <p:Date>2001-01-01</p:Date>
-  <p:Description>p:Description</p:Description>
-  <p:Client>
-    <p:entité>p:entité</p:entité>
-    <p:contact>p:contact</p:contact>
-    <p:codePostal>0</p:codePostal>
-  </p:Client>
-  <p:Equipe>
-    <p:gender>false</p:gender>
-    <p:nom>p:nom</p:nom>
-    <p:prenom>p:prenom</p:prenom>
-  </p:Equipe>
-  <p:Equipe>
-    <p:gender>false</p:gender>
-    <p:nom>p:nom</p:nom>
-    <p:prenom>p:prenom</p:prenom>
-  </p:Equipe>
-  <p:Fonctionnalite Priorite="0">
-    <p:Description>p:Description</p:Description>
-    <p:ExigenceFonctionnelle>
-      <p:Identifiant>idvalue0</p:Identifiant>
-      <p:Description>p:Description</p:Description>
-      <p:Priorite>0</p:Priorite>
-    </p:ExigenceFonctionnelle>
-    <p:ExigenceFonctionnelle>
-      <p:Identifiant>idvalue1</p:Identifiant>
-      <p:Description>p:Description</p:Description>
-      <p:Priorite>0</p:Priorite>
-    </p:ExigenceFonctionnelle>
-  </p:Fonctionnalite>
-</p:STB>
+<STB xmlns:p="http://univ.fr/stb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <titreDuProjet>AmicaleGIL</titreDuProjet>
+  <version>0.1</version>
+  <date>2001-01-01</date>
+  <description>Description</description>
+  <client>
+    <entité>entité</entité>
+    <contact>contact</contact>
+    <codePostal>0</codePostal>
+  </client>
+  <equipe>
+    <gender>false</gender>
+    <nom>nom</nom>
+    <prenom>prenom</prenom>
+  </equipe>
+  <equipe>
+    <gender>false</gender>
+    <nom>nom</nom>
+    <prenom>prenom</prenom>
+  </equipe>
+  <fonctionnalite Priorite="0">
+    <description>Description</description>
+    <exigenceFonctionnelle>
+      <identifiant>idvalue0</identifiant>
+      <description>Description</description>
+      <priorite>0</priorite>
+    </exigenceFonctionnelle>
+    <exigenceFonctionnelle>
+      <identifiant>idvalue1</identifiant>
+      <description>Description</description>
+      <priorite>0</priorite>
+    </exigenceFonctionnelle>
+  </fonctionnalite>
+</STB>

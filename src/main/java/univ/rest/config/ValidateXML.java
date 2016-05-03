@@ -18,7 +18,7 @@ public class ValidateXML {
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         Schema schema = null;
         try {
-            schema = factory.newSchema(new StreamSource("src/main/ressources/stb.xsd"));
+            schema = factory.newSchema(new StreamSource("src/main/resources/stb.xsd"));
         } catch (SAXException e) {
             e.printStackTrace();
             return false;

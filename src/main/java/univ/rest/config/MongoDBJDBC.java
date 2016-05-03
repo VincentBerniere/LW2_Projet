@@ -20,7 +20,6 @@ public class MongoDBJDBC {
 
             // To connect to mongodb server
             MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
-
             // Now connect to your databases
             DB db = mongoClient.getDB("stbs");
             System.out.println("Connect to database successfully");

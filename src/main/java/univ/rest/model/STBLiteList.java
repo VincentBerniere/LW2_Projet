@@ -1,13 +1,12 @@
 package univ.rest.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Vincent on 01/05/2016.
- */
 @XmlRootElement(name="STBs")
 public class STBLiteList implements Serializable {
     private static final long serialVersionUID = 1L;

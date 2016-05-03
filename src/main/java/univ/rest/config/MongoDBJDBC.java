@@ -17,7 +17,6 @@ public class MongoDBJDBC {
         STBLiteList stbs = new STBLiteList();
 
         try {
-
             // To connect to mongodb server
             MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
             // Now connect to your databases

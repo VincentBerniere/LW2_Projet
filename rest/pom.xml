@@ -6,7 +6,6 @@
     <artifactId>rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <name>rest</name>
     <url>http://maven.apache.org</url>
 
@@ -86,4 +85,5 @@
             <version>1.4.5</version>
         </dependency>
     </dependencies>
+
 </project>

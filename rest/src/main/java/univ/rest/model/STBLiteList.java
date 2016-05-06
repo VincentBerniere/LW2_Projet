@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name="STBs")
+@XmlRootElement(name="stbs")
 public class STBLiteList implements Serializable {
 
     private List<STBLite> stbs = new ArrayList<STBLite>();

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement (name = "STB")
+@XmlRootElement (name = "stb")
 @XmlAccessorType(XmlAccessType.NONE)
 public class STB {
 	@XmlElement
 	private String id;
 	@XmlElement
-	private String titreDuProjet;
+	private String titreProjet;
 	@XmlElement
 	private double version;
 	@XmlElement
@@ -23,17 +23,20 @@ public class STB {
 	private ArrayList<Equipe> equipe;
 	@XmlElement
 	private ArrayList<Fonctionnalite> fonctionnalite;
+	@XmlElement
+	private String commentaire;
 
-	public STB(String id, String titre, double version, String date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite) {
+	public STB(String id, String titre, double version, String date, String description, Client client, ArrayList<Equipe> equipe, ArrayList<Fonctionnalite> fonctionnalite, String commentaire) {
 		super();
 		this.id = id;
-		this.titreDuProjet = titre;
+		this.titreProjet = titre;
 		this.version = version;
 		this.date = date;
 		this.description = description;
 		this.client = client;
 		this.equipe = equipe;
 		this.fonctionnalite = fonctionnalite;
+		this.commentaire = commentaire;
 	}
 	public STB(){
         
@@ -47,11 +50,11 @@ public class STB {
 	}
 	
 	public String getTitre() {
-		return titreDuProjet;
+		return titreProjet;
 	}
 
 	public void setTitre(String titre) {
-		this.titreDuProjet = titre;
+		this.titreProjet = titre;
 	}
 
 	public double getVersion() {
@@ -102,11 +105,19 @@ public class STB {
 		this.fonctionnalite = fonctionnalite;
 	}
 
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+
 	@Override
 	public String toString() {
 		return "STB{" +
 				"id=" + id +
-				", titre='" + titreDuProjet + '\'' +
+				", titre='" + titreProjet + '\'' +
 				", version='" + version + '\'' +
 				", date=" + date +
 				", description='" + description + '\'' +

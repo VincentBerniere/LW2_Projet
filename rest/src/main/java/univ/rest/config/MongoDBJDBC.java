@@ -81,6 +81,7 @@ public class MongoDBJDBC {
                     double version = (double) dbo.get("version");
                     String date = (String) dbo.get("date");
                     String descript = (String) dbo.get("description");
+                    String commentaire = (String) dbo.get("commentaire");
 
                     // On récupère le Client
                     BasicDBObject clientDb = (BasicDBObject) dbo.get("client");
@@ -106,7 +107,7 @@ public class MongoDBJDBC {
                     for (int i = 0; i < list.size(); i++) {
                         BasicDBObject obj = (BasicDBObject) list.get(i);
                         String description = obj.getString("description");
-                        String commentaire = obj.getString("commentaire");
+                        int priorite = obj.getInt("priorite");
 
                         // On récupère la liste des exigences d'une fonctionnalite
                         ArrayList<ExigenceFonctionnelle> exigences = new ArrayList<ExigenceFonctionnelle>();
@@ -115,17 +116,17 @@ public class MongoDBJDBC {
                             BasicDBObject obj2 = (BasicDBObject) list2.get(j);
                             String id = obj2.getString("identifiant");
                             String desc = obj2.getString("description");
-                            int priorite = obj2.getInt("priorite");
-                            ExigenceFonctionnelle exigenceFonctionnelle = new ExigenceFonctionnelle(id, desc, priorite);
+                            int priorite2 = obj2.getInt("priorite");
+                            ExigenceFonctionnelle exigenceFonctionnelle = new ExigenceFonctionnelle(id, desc, priorite2);
 
                             exigences.add(exigenceFonctionnelle);
                         }
 
-                        Fonctionnalite f = new Fonctionnalite(description, commentaire, exigences);
+                        Fonctionnalite f = new Fonctionnalite(description, exigences, priorite);
 
                         fonctionnalites.add(f);
                     }
-                    stb = new STB(idSTB.toString(), titre, version, date, descript, client, equipes, fonctionnalites);
+                    stb = new STB(idSTB.toString(), titre, version, date, descript, client, equipes, fonctionnalites, commentaire);
 
                     //System.out.println(cursor.next());
                 }
@@ -181,6 +182,12 @@ public class MongoDBJDBC {
                     append("version", stb.getVersion()).
                     append("date", stb.getDate()).
                     append("description", stb.getDescription());
+            if (stb.getCommentaire() == null) {
+                doc.append("commentaire", "");
+            } else {
+                doc.append("commentaire", stb.getCommentaire());
+            }
+
 
             BasicDBObject client = new BasicDBObject().
                     append("entite", stb.getClient().getEntite()).
@@ -202,8 +209,7 @@ public class MongoDBJDBC {
             for (Fonctionnalite f : stb.getFonctionnalite()) {
                 BasicDBObject fonctionnalite = new BasicDBObject()
                         .append("description", f.getDescription())
-                        .append("commentaire", f.getCommentaire());
-
+                        .append("priorite", f.getPriorite());
 
                 BasicDBList exigences = new BasicDBList();
                 for (ExigenceFonctionnelle exigence : f.getExigenceFonctionnelle()) {

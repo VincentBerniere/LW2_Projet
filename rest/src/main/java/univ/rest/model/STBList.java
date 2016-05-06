@@ -9,10 +9,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement (name="STBs")
+@XmlRootElement (name="stbs")
 public class STBList implements Serializable {
 
-    @XmlElement(name="STB")
+    @XmlElement(name="stb")
     private List<STB> stbs = new ArrayList<STB>();
     
     public List<STB> getSTBs() {

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by Vincent on 01/05/2016.
  */
-@XmlRootElement(name = "STB")
+@XmlRootElement(name = "stb")
 @XmlAccessorType(XmlAccessType.NONE)
 public class STBLite {
     @XmlElement
@@ -22,6 +22,8 @@ public class STBLite {
     private String date;
     @XmlElement
     private String description;
+    @XmlElement
+    private String commentaire;
 
     public STBLite(String id, String titre, double version, String date, String description) {
         super();
@@ -72,6 +74,14 @@ public class STBLite {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 
     @Override

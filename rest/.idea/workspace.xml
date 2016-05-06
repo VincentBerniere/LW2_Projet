@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1d6a45d-3639-4676-a0ca-fe47b59ce27a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java" afterPath="$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/univ/rest/config/MongoDBJDBC.class" afterPath="$PROJECT_DIR$/target/classes/univ/rest/config/MongoDBJDBC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/univ/rest/model/ExigenceFonctionnelle.class" afterPath="$PROJECT_DIR$/target/classes/univ/rest/model/ExigenceFonctionnelle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT/WEB-INF/classes/univ/rest/config/MongoDBJDBC.class" afterPath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT/WEB-INF/classes/univ/rest/config/MongoDBJDBC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT/WEB-INF/classes/univ/rest/model/ExigenceFonctionnelle.class" afterPath="$PROJECT_DIR$/target/rest-0.0.1-SNAPSHOT/WEB-INF/classes/univ/rest/model/ExigenceFonctionnelle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="rest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,62 +30,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/config/AppConfig.java">
+      <file leaf-file-name="MongoDBJDBC.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/config/MongoDBJDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="719">
+              <caret line="205" column="42" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
+              <folding>
+                <element signature="e#4622#4645#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="STBController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java">
+      <file leaf-file-name="ExigenceFonctionnelle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/ExigenceFonctionnelle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="15" column="25" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+              <folding>
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1009#1010#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/controller/HomeController.java">
+      <file leaf-file-name="Fonctionnalite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Fonctionnalite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="STBLiteList.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="STBLite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="STB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <element signature="e#1217#1218#0" expanded="true" />
+                <element signature="e#1248#1249#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,8 +73,8 @@
       <file leaf-file-name="stb.xsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ressources/stb.xsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="790">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -105,11 +90,54 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="STBController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Equipe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Equipe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="STBList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="119">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="STB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+              <folding>
+                <element signature="e#2155#2156#0" expanded="true" />
+                <element signature="e#2180#2181#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -135,19 +163,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STBLite.java" />
         <option value="$PROJECT_DIR$/src/main/java/univ/rest/config/SimpleErrorHandler.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/validateXML.java" />
         <option value="$PROJECT_DIR$/src/main/java/univ/rest/config/validateXML.java" />
         <option value="$PROJECT_DIR$/src/main/java/univ/rest/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/univ/rest/config/MongoDBJDBC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STBList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java" />
         <option value="$PROJECT_DIR$/src/main/java/univ/rest/config/ValidateXML.java" />
-        <option value="$PROJECT_DIR$/src/main/ressources/stb.xsd" />
         <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STBList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STBLite.java" />
+        <option value="$PROJECT_DIR$/src/main/ressources/stb.xsd" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/Fonctionnalite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/model/ExigenceFonctionnelle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/univ/rest/config/MongoDBJDBC.java" />
       </list>
     </option>
   </component>
@@ -295,6 +325,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,12 +760,12 @@
       <updated>1462178931658</updated>
       <workItem from="1462178940596" duration="5205000" />
       <workItem from="1462193450046" duration="3121000" />
-      <workItem from="1462527588149" duration="3089000" />
+      <workItem from="1462527588149" duration="7220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11415000" />
+    <option name="totallyTimeSpent" value="15546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -751,7 +841,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="e#1745#1746#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +851,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,10 +885,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/config/MongoDBJDBC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Equipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="176" column="71" selection-start-line="176" selection-start-column="71" selection-end-line="176" selection-end-column="71" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+          <folding>
+            <element signature="e#1745#1746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -806,51 +919,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ressources/stb.xsd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        <state relative-caret-position="527">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="119">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLite.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        <state relative-caret-position="1071">
+          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+          <folding>
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/Fonctionnalite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="e#1217#1218#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ressources/stb.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/controller/STBController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/ExigenceFonctionnelle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="15" column="25" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/model/STBLiteList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/univ/rest/config/MongoDBJDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="719">
+          <caret line="205" column="42" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
+          <folding>
+            <element signature="e#4622#4645#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -13,14 +13,14 @@ public class Fonctionnalite {
     private String description;
     @XmlElement
     private ArrayList<ExigenceFonctionnelle> exigenceFonctionnelle;
-    @XmlElement
-    private String commentaire;
+    @XmlAttribute
+    private int priorite;
 
-    public Fonctionnalite(String description, String commentaire, ArrayList<ExigenceFonctionnelle> exigenceFonctionnelle) {
+    public Fonctionnalite(String description, ArrayList<ExigenceFonctionnelle> exigenceFonctionnelle, int priorite) {
         super();
         this.description = description;
-        this.commentaire = commentaire;
         this.exigenceFonctionnelle = exigenceFonctionnelle;
+        this.priorite = priorite;
     }
     public Fonctionnalite() {
     }
@@ -41,12 +41,12 @@ public class Fonctionnalite {
         this.exigenceFonctionnelle = exigenceFonctionnelle;
     }
 
-    public String getCommentaire() {
-        return commentaire;
+    public int getPriorite() {
+        return priorite;
     }
 
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
+    public void setPriorite(int priorite) {
+        this.priorite = priorite;
     }
 
     @Override
@@ -54,7 +54,6 @@ public class Fonctionnalite {
         return "Fonctionnalite{" +
                 "description='" + description + '\'' +
                 ", exigenceFonctionnelle=" + exigenceFonctionnelle +
-                ", commentaire='" + commentaire + '\'' +
                 '}';
     }
 }

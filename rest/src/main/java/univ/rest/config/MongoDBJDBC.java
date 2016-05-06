@@ -18,16 +18,10 @@ public class MongoDBJDBC {
 
         try {
 
-            // To connect to mongodb server
-            MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
-
-            // Now connect to your databases
-            DB db = mongoClient.getDB("stbs");
+            MongoClientURI uri  = new MongoClientURI("mongodb://VincentBerniere:stbgil@ds021691.mlab.com:21691/stbs");
+            MongoClient mongoClient = new MongoClient(uri);
+            DB db = mongoClient.getDB(uri.getDatabase());
             System.out.println("Connect to database successfully");
-
-            char[] password = "stbgil".toCharArray();
-            boolean auth = db.authenticate("VincentBerniere", password);
-            System.out.println("Authentication: " + auth);
 
             DBCollection coll = db.getCollection("stb");
             System.out.println("Collection stb selected successfully");
@@ -66,16 +60,10 @@ public class MongoDBJDBC {
 
         try {
 
-            // To connect to mongodb server
-            MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
-
-            // Now connect to your databases
-            DB db = mongoClient.getDB("stbs");
+            MongoClientURI uri  = new MongoClientURI("mongodb://VincentBerniere:stbgil@ds021691.mlab.com:21691/stbs");
+            MongoClient mongoClient = new MongoClient(uri);
+            DB db = mongoClient.getDB(uri.getDatabase());
             System.out.println("Connect to database successfully");
-
-            char[] password = "stbgil".toCharArray();
-            boolean auth = db.authenticate("VincentBerniere", password);
-            System.out.println("Authentication: " + auth);
 
             DBCollection coll = db.getCollection("stb");
             System.out.println("Collection stb selected successfully");
@@ -155,16 +143,10 @@ public class MongoDBJDBC {
 
         try {
 
-            // To connect to mongodb server
-            MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
-
-            // Now connect to your databases
-            DB db = mongoClient.getDB("stbs");
+            MongoClientURI uri  = new MongoClientURI("mongodb://VincentBerniere:stbgil@ds021691.mlab.com:21691/stbs");
+            MongoClient mongoClient = new MongoClient(uri);
+            DB db = mongoClient.getDB(uri.getDatabase());
             System.out.println("Connect to database successfully");
-
-            char[] password = "stbgil".toCharArray();
-            boolean auth = db.authenticate("VincentBerniere", password);
-            System.out.println("Authentication: " + auth);
 
             DBCollection coll = db.getCollection("stb");
             System.out.println("Collection stb selected successfully");
@@ -186,16 +168,10 @@ public class MongoDBJDBC {
 
     public static boolean insertMongoSTB(STB stb) {
         try {
-            // To connect to mongodb server
-            MongoClient mongoClient = new MongoClient("ds021691.mlab.com", 21691);
-
-            // Now connect to your databases
-            DB db = mongoClient.getDB("stbs");
+            MongoClientURI uri  = new MongoClientURI("mongodb://VincentBerniere:stbgil@ds021691.mlab.com:21691/stbs");
+            MongoClient mongoClient = new MongoClient(uri);
+            DB db = mongoClient.getDB(uri.getDatabase());
             System.out.println("Connect to database successfully");
-
-            char[] password = "stbgil".toCharArray();
-            boolean auth = db.authenticate("VincentBerniere", password);
-            System.out.println("Authentication: " + auth);
 
             DBCollection coll = db.getCollection("stb");
             System.out.println("Collection stb selected successfully");

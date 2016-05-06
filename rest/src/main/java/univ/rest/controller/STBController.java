@@ -30,7 +30,7 @@ public class STBController {
 
     @RequestMapping(value = "/resume")
     public ResponseEntity<STBLiteList> getAllSTBs() {
-        STBLiteList stbs = new MongoDBJDBC().getMongoSTBList();
+        STBLiteList stbs = MongoDBJDBC.getMongoSTBList();
 
         if (stbs.getSTBs().size() > 0) {
             return new ResponseEntity<STBLiteList>(stbs, HttpStatus.OK);
@@ -41,7 +41,7 @@ public class STBController {
 
     @RequestMapping(value = "/resume/{id}")
     public ResponseEntity<STB> getSTBById(@PathVariable("id") String id) {
-        STB stb = new MongoDBJDBC().getMongoSTBList(id);
+        STB stb = MongoDBJDBC.getMongoSTBList(id);
 
         if (stb != null) {
             return new ResponseEntity<STB>(stb, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class STBController {
     @RequestMapping(method = RequestMethod.POST, value = "/depot", headers = "Accept=application/xml")
     public ResponseEntity insertSTB(@RequestBody STB stb) {
 
-        if (new MongoDBJDBC().insertMongoSTB(stb)) {
+        if (MongoDBJDBC.insertMongoSTB(stb)) {
             boolean validate = true;
 
             try {
@@ -65,7 +65,7 @@ public class STBController {
                 StringWriter xmlStr = new StringWriter();
                 jaxbMarshaller.marshal(stb, xmlStr);
 
-                validate = new ValidateXML().should_validate_with_DOM(xmlStr);
+                validate = ValidateXML.should_validate_with_DOM(xmlStr);
 
             } catch (JAXBException e) {
                 return new ResponseEntity("Erreur lors de la validation !", HttpStatus.BAD_REQUEST);

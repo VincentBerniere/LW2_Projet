@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <stb>
   <titreProjet>Amicale GIL</titreProjet>
   <version>0.1</version>
@@ -11,10 +12,25 @@
   </client>
   <equipe>
     <gender>true</gender>
+=======
+<STB xmlns:p="http://univ.fr/stb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <titreDuProjet>AmicaleGIL</titreDuProjet>
+  <version>0.1</version>
+  <date>2001-01-01</date>
+  <description>Description</description>
+  <client>
+    <entité>entité</entité>
+    <contact>contact</contact>
+    <codePostal>0</codePostal>
+  </client>
+  <equipe>
+    <gender>false</gender>
+>>>>>>> b1a6984842496d8cff5fe6f94d2a39d0f1fc9af3
     <nom>nom</nom>
     <prenom>prenom</prenom>
   </equipe>
   <equipe>
+<<<<<<< HEAD
     <gender>true</gender>
     <nom>nom</nom>
     <prenom>prenom</prenom>
@@ -31,3 +47,23 @@
     </exigenceFonctionnelle>
   </fonctionnalite>
 </stb>
+=======
+    <gender>false</gender>
+    <nom>nom</nom>
+    <prenom>prenom</prenom>
+  </equipe>
+  <fonctionnalite Priorite="0">
+    <description>Description</description>
+    <exigenceFonctionnelle>
+      <identifiant>idvalue0</identifiant>
+      <description>Description</description>
+      <priorite>0</priorite>
+    </exigenceFonctionnelle>
+    <exigenceFonctionnelle>
+      <identifiant>idvalue1</identifiant>
+      <description>Description</description>
+      <priorite>0</priorite>
+    </exigenceFonctionnelle>
+  </fonctionnalite>
+</STB>
+>>>>>>> b1a6984842496d8cff5fe6f94d2a39d0f1fc9af3

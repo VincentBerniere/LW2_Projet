@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stb>
+  <titreProjet>Amicale GIL</titreProjet>
+  <version>0.1</version>
+  <date>2016-05-06</date>
+  <description>Reseau social pour etudiant</description>
+  <client>
+    <entite>M. PAtrou</entite>
+    <contact>1 rue ...</contact>
+    <codePostal>76100</codePostal>
+  </client>
+  <equipe>
+    <gender>true</gender>
+    <nom>nom</nom>
+    <prenom>prenom</prenom>
+  </equipe>
+  <equipe>
+    <gender>true</gender>
+    <nom>nom</nom>
+    <prenom>prenom</prenom>
+  </equipe>
+  <fonctionnalite priorite="1">
+    <description>description</description>
+    <exigenceFonctionnelle priorite="1">
+      <identifiant>0</identifiant>
+      <description>description</description>
+    </exigenceFonctionnelle>
+    <exigenceFonctionnelle priorite="2">
+      <identifiant>0</identifiant>
+      <description>description</description>
+    </exigenceFonctionnelle>
+  </fonctionnalite>
+</stb>
